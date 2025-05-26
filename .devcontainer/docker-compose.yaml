@@ -1,0 +1,15 @@
+services:
+
+  workspace:
+    image: mcr.microsoft.com/devcontainers/base:ubuntu
+    command: sleep infinity
+    volumes: 
+      - ../..:/workspaces:cached
+    networks:
+      - dev_network
+
+networks:
+  dev_network: 
+    driver: bridge
+    driver_opts:
+      com.docker.network.bridge.host_binding_ipv4: 127.0.0.1

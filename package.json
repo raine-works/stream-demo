@@ -1,0 +1,26 @@
+{
+	"name": "file-demo",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"dev": "bun run --hot src/server.ts",
+		"format": "biome format --write .",
+		"lint": "biome lint ./src"
+	},
+	"dependencies": {
+		"@orpc/client": "1.3.0",
+		"@orpc/server": "1.3.0",
+		"hono": "4.7.10",
+		"react": "19.1.0",
+		"react-dom": "19.1.0",
+		"zod": "3.25.23"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"bun-types": "1.2.14",
+		"@types/react": "19.1.5",
+		"@types/react-dom": "19.1.5",
+		"typescript": "5.8.3"
+	},
+	"trustedDependencies": ["@biomejs/biome"]
+}

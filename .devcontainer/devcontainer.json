@@ -1,0 +1,28 @@
+{
+	"name": "Workspace",
+	"dockerComposeFile": "docker-compose.yaml",
+	"service": "workspace",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"features": {
+		"ghcr.io/raine-works/devcontainer-features/bun:1": { "version": "1.2.14" },
+		"ghcr.io/devcontainers/features/github-cli:1": {}
+	},
+	"mounts": [
+		"source=${env:HOME}${env:USERPROFILE}/.config/gh,target=/home/vscode/.config/gh,type=bind"
+	],
+	"containerEnv": {
+		"NODE_ENV": "development",
+		"TZ": "UTC"
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"oven.bun-vscode",
+				"mhutchie.git-graph",
+				"waderyan.gitblame",
+				"yoavbls.pretty-ts-errors",
+				"biomejs.biome"
+			]
+		}
+	}
+}
