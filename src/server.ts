@@ -11,7 +11,12 @@ const startServer = async (port: number) => {
 			console: true
 		},
 		routes: {
-			'/': index
+			'/': index,
+			'/sw.js': () =>
+				new Response(Bun.file(Bun.resolveSync('./sw.js', import.meta.dir)), {
+					status: 200,
+					headers: { 'Content-Type': 'text/javascript' }
+				})
 		},
 		async fetch(request: Request) {
 			const { matched, response } = await rpcHandler.handle(request, {
